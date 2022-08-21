@@ -33,26 +33,23 @@ if(strpos($message, "/start") === 0){
 if(!isBanned($userId) && !isMuted($userId)){
 
   if($userId == $config['adminID']){
-    $messagesec = "<b>Type /admin to know admin commands</b>";
+    $messagesec = "<b>Type /admin comandos de administrador</b>";
   }
 
     addUser($userId);
     bot('sendmessage',[
         'chat_id'=>$chat_id,
-        'text'=>"<b>Hello @$username,
+        'text'=>"<b>Hola @$username,
 
-Type /cmds to know all my commands!</b>
+Type /cmds todos los comandos!</b>
 
 $messagesec",
 	'parse_mode'=>'html',
 	'reply_to_message_id'=> $message_id,
     'reply_markup'=>json_encode(['inline_keyboard' => [
         [
-          ['text' => "💠 Created By 💠", 'url' => "t.me/ninjanaveen"]
-        ],
-        [
-          ['text' => "💎 Source Code 💎", 'url' => "t.me/IndianBotsChat"]
-        ],
+          ['text' => "💠 Creado Por 💠", 'url' => "t.me/iCesBoy"]
+        ],      
       ], 'resize_keyboard' => true])
         
     ]);
@@ -66,11 +63,11 @@ if(strpos($message, "/cmds") === 0 || strpos($message, "!cmds") === 0){
   if(!isBanned($userId) && !isMuted($userId)){
     bot('sendmessage',[
     'chat_id'=>$chat_id,
-    'text'=>"<b>Which commands would you like to check?</b>",
+    'text'=>"<b>Que comandos deseas checar?</b>",
     'parse_mode'=>'html',
     'reply_to_message_id'=> $message_id,
     'reply_markup'=>json_encode(['inline_keyboard'=>[
-    [['text'=>"💳 CC Checker Gates",'callback_data'=>"checkergates"]],[['text'=>"🛠 Other Commands",'callback_data'=>"othercmds"]],
+    [['text'=>"💳 CC Checker Gates",'callback_data'=>"checkergates"]],[['text'=>"🛠 Otros Comandos",'callback_data'=>"othercmds"]],
     ],'resize_keyboard'=>true])
     ]);
   }
@@ -81,10 +78,10 @@ if(strpos($message, "/cmds") === 0 || strpos($message, "!cmds") === 0){
     bot('editMessageText',[
     'chat_id'=>$callbackchatid,
     'message_id'=>$callbackmessageid,
-    'text'=>"<b>Which commands would you like to check?</b>",
+    'text'=>"<b>Que comandos deseas checar?</b>",
     'parse_mode'=>'html',
     'reply_markup'=>json_encode(['inline_keyboard'=>[
-    [['text'=>"💳 CC Checker Gates",'callback_data'=>"checkergates"]],[['text'=>"🛠 Other Commands",'callback_data'=>"othercmds"]],
+    [['text'=>"💳 CC Checker Gates",'callback_data'=>"checkergates"]],[['text'=>"🛠 Otros Comandos",'callback_data'=>"othercmds"]],
     ],'resize_keyboard'=>true])
     ]);
   }
@@ -102,7 +99,7 @@ if(strpos($message, "/cmds") === 0 || strpos($message, "!cmds") === 0){
 <b>/apikey sk_live_xxx - Add SK Key for /schk gate</b>
 <b>/myapikey | !myapikey - View the added SK Key for /schk gate</b>
 
-<b>ϟ Join <a href='t.me/IndianBots'>IndianBots</a></b>",
+<b>ϟ Join <a href='t.me/iCesBoy'>iCesBoy</a></b>",
     'parse_mode'=>'html',
     'disable_web_page_preview'=>true,
     'reply_markup'=>json_encode(['inline_keyboard'=>[
@@ -118,13 +115,13 @@ if(strpos($message, "/cmds") === 0 || strpos($message, "!cmds") === 0){
     'message_id'=>$callbackmessageid,
     'text'=>"<b>━━Other Commands━━</b>
   
-<b>/me | !me</b> - Your Info
+<b>/me | !me</b> - Su Info
 <b>/stats | !stats</b> - Checker Stats
 <b>/key | !key</b> - SK Key Checker
 <b>/bin | !bin</b> - Bin Lookup
 <b>/iban | !iban</b> - IBAN Checker
   
-  <b>ϟ Join <a href='t.me/IndianBots'>IndianBots</a></b>",
+  <b>ϟ Join <a href='t.me/iCesBoy'>iCesBoy</a></b>",
     'parse_mode'=>'html',
     'disable_web_page_preview'=>true,
     'reply_markup'=>json_encode(['inline_keyboard'=>[
